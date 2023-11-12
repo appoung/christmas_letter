@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "DNFBitBitv2";
+  font-style: normal;
+  font-weight: 400;
+  src: url("//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf")
+    format("opentype");
+}
+h1 {
+  font-family: "DNFBitBitv2";
+  color: whitesmoke;
+}
+* {
+  font-family: "DNFBitBitv2";
+}
+a:link,
+a:visited {
+  background-color: #00ff4c;
+  color: black;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a:hover,
+a:active {
+  background-color: #ff4500;
+}
+body {
+  background-image: url("/static/img/background.jpg");
+  background-size: cover;
+}
