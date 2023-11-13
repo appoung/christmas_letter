@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{username}}에게 편지를 보내세요</title>
+    <link rel="stylesheet" href="/static/css/sendletter.css" />
+  </head>
+  <body>
+    <h2>{{username}}님에게 편지를 보내세요</h2>
+    <form id="sendletter" action="/dbletter/{{username}}" method="post">
+      <input type="text" name="letter" placeholder="편지를써보세요" />
+    </form>
+  </body>
+</html>

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="/static/css/login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/static/css/login.css" />
     <title>로그인</title>
-</head>
-<body>
-    <h1>크리스마스 익명편지 Christmas NGL입니다</h1>
+  </head>
+  <body>
+    <h1>크리스마스 익명편지 CML입니다🎅🏻</h1>
     <a href="/" class="home">홈</a>
     <h1>로그인</h1>
     <form id="login" action="/login" method="post">
-        <input type="text" name="username" placeholder="아이디">
-        <input type="password" name="password" placeholder="비밀번호">
-        <input type="submit" value="로그인">
-</body>
+      <input type="text" name="username" placeholder="아이디" />
+      <input type="password" name="password" placeholder="비밀번호" />
+      <input type="submit" value="로그인" ,id="submit" />
+    </form>
+    <h3>{{error}}</h3>
+  </body>
 </html>

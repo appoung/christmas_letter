@@ -5,7 +5,10 @@
   src: url("//cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf")
     format("opentype");
 }
-
+h1 {
+  font-family: "DNFBitBitv2";
+  color: whitesmoke;
+}
 * {
   font-family: "DNFBitBitv2";
 }
@@ -21,4 +24,22 @@ a:visited {
 a:hover,
 a:active {
   background-color: #ff4500;
+}
+body {
+  background-image: url("/static/img/background.jpg");
+  background-size: cover;
+}
+input {
+  background-color: rgb(187, 255, 202);
+  color: black;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+input:hover,
+input:active {
+  background-color: #ff8a5f;
+}
+h3 {
+  color: #ff4500;
 }

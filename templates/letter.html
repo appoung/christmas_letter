@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{username}}님의 편지함</title>
+    <link rel="stylesheet" href="/static/css/letter.css" />
+  </head>
+  <body>
+    <h1>{{username}}님의 편지함</h1>
+    <a href="/" class="home">홈</a>
+    <button
+      class="copy"
+      onclick="copyToClipboard('http://localhost:5000/sendletter/{{username}}')"
+    >
+      편지함 링크복사
+    </button>
+    {% for letter in letters %}
+    <h2>{{letter}}</h2>
+    {% endfor %} {% block scripts %}
+    <script>
+      function copyToClipboard(link) {
+        navigator.clipboard.writeText(link);
+      }
+    </script>
+    {% endblock %}
+  </body>
+</html>

@@ -8,10 +8,19 @@
     <title>크리스마스 익명편지</title>
   </head>
   <body>
-    <h1>크리스마스 익명편지 Christmas NGL입니다</h1>
+    <h1>크리스마스 익명편지 CML입니다🎅🏻</h1>
     <div class="navi">
+      {% if session['username'] %}
+      <a href="/logout" class="logout">로그아웃</a>
+      <a
+        href="/letter/{{session['username']}}/{{session['password']}}"
+        class="myletter"
+        >{{session['username']}}님의 편지함</a
+      >
+      {% else %}
       <a href="/login" class="login">로그인</a>
       <a href="/register" class="register">회원가입</a>
+      {% endif %}
     </div>
   </body>
 </html>
