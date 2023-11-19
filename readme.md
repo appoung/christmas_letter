@@ -2,7 +2,7 @@
 
 "크리스마스 익명편지 CML"은 Flask 웹 프레임워크와 Firebase를 이용하여 만든 익명 편지 서비스입니다. 이 서비스를 사용하여 친구들에게 익명으로 메시지를 전할 수 있습니다.
 
-![크리스마스 익명편지 CML](./sitepicture.pngimage.png)
+![크리스마스 익명편지 CML](./sitepicture.png)
 
 ## 기능
 
