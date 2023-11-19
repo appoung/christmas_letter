@@ -9,20 +9,29 @@
   <body>
     <h1>{{username}}님의 편지함</h1>
     <a href="/" class="home">홈</a>
-    <button
-      class="copy"
-      onclick="copyToClipboard('http://localhost:5000/sendletter/{{username}}')"
-    >
-      편지함 링크복사
-    </button>
+    <p>
+      <span id="linkToCopy"
+        >http://192.168.219.107:5000/sendletter/{{username}}</span
+      >
+    </p>
+    <button onclick="copyToClipboard()">편지함링크 복사</button>
     {% for letter in letters %}
     <h2>{{letter}}</h2>
-    {% endfor %} {% block scripts %}
+    {% endfor %}
     <script>
-      function copyToClipboard(link) {
-        navigator.clipboard.writeText(link);
+      function copyToClipboard() {
+        // 텍스트 필드를 선택하고 복사
+        var linkToCopy = document.getElementById("linkToCopy");
+        var range = document.createRange();
+        range.selectNode(linkToCopy);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+
+        // 복사가 성공했음을 알리는 메시지 표시
+        alert("링크가 복사되었습니다: " + linkToCopy.innerText);
       }
     </script>
-    {% endblock %}
   </body>
 </html>

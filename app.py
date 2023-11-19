@@ -92,7 +92,7 @@ def db_letter(username):
         new_data = {
             letter_id: request.form['letter']
         }
-
+        print(new_data)
         # get data from database and add new letter
         document = firebase_db.collection(u'letters').document(username)
         letters = document.get().to_dict()
@@ -103,7 +103,6 @@ def db_letter(username):
             document.set(new_data)
         else:
             letters.update(new_data)
-        letters = document.get().to_dict()
         print(letters)
         document.set(letters)
         return redirect(url_for('successletter'))
@@ -116,12 +115,15 @@ def successletter():
 
 @app.route('/letter/<username>/<password>')
 def letter(username, password):
-    document = firebase_db.collection(u'letters').document(username)
-    letters = document.get().to_dict()
-    # letters like letter1:hello
-    letter_text = []
-    for i in letters:
-        letter_text.append(letters[i])
+    # if theres no letters, letter_text is "편지가 없습니다"
+    try:
+        document = firebase_db.collection(u'letters').document(username)
+        letters = document.get().to_dict()
+        letter_text = []
+        for letter in letters:
+            letter_text.append(letters[letter])
+    except:
+        letter_text = "편지가 없습니다"
 
     return render_template('letter.html', username=username, password=password, letters=letter_text)
 

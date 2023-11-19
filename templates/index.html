@@ -13,7 +13,7 @@
       {% if session['username'] %}
       <a href="/logout" class="logout">로그아웃</a>
       <a
-        href="/letter/{{session['username']}}/{{session['password']}}"
+        href="http://192.168.219.107:5000/letter/{{session['username']}}/{{session['password']}}"
         class="myletter"
         >{{session['username']}}님의 편지함</a
       >
